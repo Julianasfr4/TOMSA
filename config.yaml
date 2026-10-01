@@ -1,0 +1,17 @@
+# Configurações do Projeto TOMSA 2026
+
+referencia_superficie:
+  lat: 41.45201666666667
+  lon: -8.81322222222222
+  alt: 55.44791126176966
+
+robos:
+  - id: "robo_1"
+    ficheiro_csv: "robot1_s1.csv"
+    cor: "#00E5FF"
+  - id: "robo_4"
+    ficheiro_csv: "robot4_s1.csv"
+    cor: "#FF0000"
+  - id: "robo_7"
+    ficheiro_csv: "robot7_s1.csv"
+    cor: "#00FF00"
