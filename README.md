@@ -6,6 +6,8 @@
 **Grupo:** 20 (Juliana Rodrigues)  
 **Docente:** Pedro Barbosa Guedes  
 
+> ▶️ **Para executar a app num computador novo, seguir o guia passo a passo em [`COMO_EXECUTAR.md`](COMO_EXECUTAR.md).**
+
 ---
 
 ## 📌 Descrição Geral do Projeto
@@ -87,7 +89,7 @@ O projeto cumpre integralmente os **5 requisitos obrigatórios** do guião e as 
 
 ### 1. Clonar e aceder ao repositório
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/Julianasfr4/TOMSA.git
 cd TOMSA
 ```
 
