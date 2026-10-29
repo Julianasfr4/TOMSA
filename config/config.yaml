@@ -1,0 +1,57 @@
+# Configurações do Projeto TOMSA 2026
+
+referencia_superficie:
+  lat: 41.45201666666667
+  lon: -8.81322222222222
+  alt: 55.44791126176966
+
+robos:
+  - id: "robo_1"
+    ficheiro_csv: "robot1_s1.csv"
+    cor: "#1f77b4"
+    convencao_orientacao: "ned"
+  - id: "robo_4"
+    ficheiro_csv: "robot4_s1.csv"
+    cor: "#d62728"
+    convencao_orientacao: "ned"
+  - id: "robo_7"
+    ficheiro_csv: "robot7_s1.csv"
+    cor: "#2ca02c"
+    convencao_orientacao: "ned"
+
+# Grelha temporal comum aos 3 robôs (posição interpolada linearmente, orientação por SLERP)
+reamostragem:
+  passo_s: 1.0
+  falha_max_s: 5.0        # falhas maiores não são interpoladas
+
+# Limiares da auditoria de dados
+anomalias:
+  limiar_salto_ms: 10.0          # salto de GPS
+  dropout_min_s: 2.0             # falha de dados
+  limiar_aceleracao_ms2: 1.0     # aceleração anómala
+
+# Configuração do CSV de telemetria exportado pelo dashboard
+saida:
+  campos: ["heading", "velocidade_ms", "distancia_origem_m"]
+  referencial: "ambos"     # ned, lla ou ambos
+  taxa_hz: 1.0
+  intervalo_s: null        # ex.: [1800, 3600]; null = missão toda
+
+# Mapa: 'auto' usa fundo sem mosaicos se não houver internet
+mapa:
+  offline: "auto"          # auto, sim ou nao
+
+# IA: Ollama local ou API externa. Se o modelo não responder, usa-se o texto por regras.
+ia:
+  ativo: true
+  fornecedor: "ollama"     # ollama ou api
+  # Ollama (local)
+  url: "http://localhost:11434"
+  modelo: "qwen2.5:3b"
+  # API externa compatível com /chat/completions (aqui: Groq; para OpenAI usar
+  # "https://api.openai.com/v1", "gpt-4o-mini" e OPENAI_API_KEY)
+  api_url: "https://api.groq.com/openai/v1"
+  api_modelo: "llama-3.1-8b-instant"
+  chave_env: "GROQ_API_KEY"     # nome da variável de ambiente com a chave (a chave nunca vai aqui)
+  timeout_s: 60
+  cache: true

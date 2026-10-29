@@ -1,0 +1,15 @@
+# Ambiente virtual e caches
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Cópias de segurança locais
+backup*/
+
+# Ficheiros antigos da raiz (substituídos pelos módulos atuais)
+/config.yaml
+/leitor_dados.py
+/analysis.py
+/ia_local.py
+analysis/incerteza.py
